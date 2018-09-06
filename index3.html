@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<table class="table table-striped table-bordered">
+		
+		
+		<tbody>
+			<tr>
+				<td>
+					<button class="btn1">增加</button>
+				</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td class="td"><button class="button">删除</button></td>
+			</tr>
+		</tbody>
+		
+	</table>
+	<!-- <button class="btn1">增加</button> -->
+</body>
+	<script>
+		let tds=document.querySelectorAll("td");
+		let buttons=document.querySelectorAll(".button");
+		let trs=document.querySelectorAll("tr");
+		let table=document.querySelector("table");
+		let tbody=document.querySelector("tbody");
+		let tdall=document.querySelectorAll(".td");
+		console.log(tdall);
+		
+
+		let btn1=document.querySelector(".btn1");
+		console.log(btn1);
+		table.onclick=function(event){
+			if(event.target.className=="btn1"){
+				let tr=document.createElement("tr");
+				tr.innerHTML=`<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td class="td"><button class="button">删除</button></td>`;
+				tbody.appendChild(tr);
+				
+			}else if(event.target.className=="button"){
+				event.target.parentNode.parentNode.innerHTML="";
+			}
+		}
+			
+			table.ondblclick=function(event){
+				if(event.target.innerText=="删除" || event.target.innerText=="增加"){
+					return;
+				}else{
+					let input=document.createElement("input");
+					input.value=event.target.innerText;
+					event.target.innerText="";
+					event.target.appendChild(input);
+					input.focus();
+					input.onblur=function(){
+						event.target.innerText=input.value;
+					}
+				}
+				
+
+			}
+		
+		
+			
+		
+			
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/*btn1.onclick=function(){
+			let tr =document.createElement("tr");
+			let td1=document.createElement("td");
+			td1.innerText="1";
+			let td2=document.createElement("td");
+			td2.innerText="2";
+			let td3=document.createElement("td");
+			td3.innerText="3";
+			let td4=document.createElement("td");
+			td4.innerText="4";
+			let td5=document.createElement("td");
+			td5.innerText="5";
+			let td6=document.createElement("td");
+			td6.innerText="6";
+			let td7=document.createElement("td");
+			td7.innerText="7";
+			let td8=document.createElement("td");
+			td8.innerText="8";
+			let td9=document.createElement("td");
+			td9.innerText="9";
+			let td10=document.createElement("td");
+			td10.className="td";
+			let button=document.createElement("button")
+			button.className="button";
+			button.innerText="删除";
+			td10.appendChild(button);
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+			tr.appendChild(td5);
+			tr.appendChild(td6);
+			tr.appendChild(td7);
+			tr.appendChild(td8);
+			tr.appendChild(td9);
+			tr.appendChild(td10);
+			tbody.appendChild(tr);
+		}
+*/
+	</script>
+</html>
